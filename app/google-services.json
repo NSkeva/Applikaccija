@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "913552050852",
+    "project_id": "applikaccija",
+    "storage_bucket": "applikaccija.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913552050852:android:c59ba846f94e96608b7431",
+        "android_client_info": {
+          "package_name": "com.strukovnasamobor.applikaccija"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913552050852-5suctutvrgi51bliuhem29uuoovdru9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1XsG1bYUziUUtz85myURU_Drj_iXl7Lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913552050852-5suctutvrgi51bliuhem29uuoovdru9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

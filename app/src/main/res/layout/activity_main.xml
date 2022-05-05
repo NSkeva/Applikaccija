@@ -6,13 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="1dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EMAIL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="EMAIL"
+            android:background="?colorSecondary"
+            android:textColor="?colorOnSecondary"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PASS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="PASS"
+            android:background="?colorSecondary"
+            android:textColor="?colorOnSecondary"/>
+
+    <Button
+        android:id="@+id/SIGNIN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:onClick="signin"
+        android:text="Button"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="384dp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="69dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
