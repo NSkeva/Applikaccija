@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Applikaccija</string>
+    <string name="password">Password(Min 7 characters)</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="signed">SIGNED</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="email">email</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_sign_in">Dont Have an account? Sign in</string>
 </resources>
