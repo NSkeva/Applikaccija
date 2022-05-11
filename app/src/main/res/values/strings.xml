@@ -7,4 +7,6 @@
     <string name="email">email</string>
     <string name="login">Login</string>
     <string name="don_t_have_an_account_sign_in">Dont Have an account? Sign in</string>
+    <string name="mapa_za_rad">Mapa za rad</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
