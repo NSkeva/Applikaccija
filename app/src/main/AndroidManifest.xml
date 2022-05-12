@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Applikaccija">
         <activity
+            android:name=".CreateProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResetPassActivity"
             android:exported="false" />
 
