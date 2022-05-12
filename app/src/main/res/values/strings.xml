@@ -9,4 +9,7 @@
     <string name="don_t_have_an_account_sign_in">Dont Have an account? Sign in</string>
     <string name="mapa_za_rad">Mapa za rad</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="forgot_your_password_reset_it">Forgot your password? Reset it</string>
+    <string name="type_your_email_for_a_password_reset">Type your email for a password reset</string>
+    <string name="reset_password">Reset Password</string>
 </resources>

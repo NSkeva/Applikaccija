@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var tvRedirectSignUp: TextView
+    private lateinit var ResetPass: TextView
     lateinit var etEmail: EditText
     private lateinit var etPass: EditText
     lateinit var btnLogin: Button
@@ -25,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
 
         // View Binding
         tvRedirectSignUp = findViewById(R.id.tvRedirectSignUp)
+        ResetPass = findViewById(R.id.ResetPass)
         btnLogin = findViewById(R.id.btnLogin)
         etEmail = findViewById(R.id.etEmailAddress)
         etPass = findViewById(R.id.etPassword)
@@ -38,6 +40,13 @@ class LoginActivity : AppCompatActivity() {
 
         tvRedirectSignUp.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            // using finish() to end the activity
+            finish()
+        }
+
+        ResetPass.setOnClickListener {
+            val intent = Intent(this, ResetPassActivity::class.java)
             startActivity(intent)
             // using finish() to end the activity
             finish()
