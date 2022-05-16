@@ -15,7 +15,11 @@
         <entry key="..\:/xampp/htdocs/WPZavrsni/Applikaccija/app/src/main/res/layout/activity_login.xml" value="0.20677083333333332" />
         <entry key="..\:/xampp/htdocs/WPZavrsni/Applikaccija/app/src/main/res/layout/activity_main.xml" value="0.20677083333333332" />
         <entry key="..\:/xampp/htdocs/WPZavrsni/Applikaccija/app/src/main/res/layout/activity_map_view.xml" value="0.25" />
-        <entry key="..\:/xampp/htdocs/WPZavrsni/Applikaccija/app/src/main/res/layout/activity_maps.xml" value="0.22" />
+        <entry key="..\:/xampp/htdocs/WPZavrsni/Applikaccija/app/src/main/res/layout/activity_maps.xml" value="0.67" />
+        <entry key="..\:/xampp/htdocs/WPZavrsni/Applikaccija/app/src/main/res/layout/activity_maps2.xml" value="0.23958333333333334" />
+        <entry key="..\:/xampp/htdocs/WPZavrsni/Applikaccija/app/src/main/res/layout/fragment_job.xml" value="0.2838541666666667" />
+        <entry key="..\:/xampp/htdocs/WPZavrsni/Applikaccija/app/src/main/res/layout/fragment_map.xml" value="0.21458333333333332" />
+        <entry key="..\:/xampp/htdocs/WPZavrsni/Applikaccija/app/src/main/res/layout/fragment_settings.xml" value="0.2838541666666667" />
       </map>
     </option>
   </component>

@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun changeView()
     {
-        val intent = Intent(this, MapView::class.java)
+        val intent = Intent(this, MapsActivity::class.java)
         startActivity(intent)
     }
 

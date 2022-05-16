@@ -17,8 +17,8 @@ internal class LocationActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-        mapFragment!!.getMapAsync(this)
+        //val mapFragment = supportFragmentManager.findFragmentById(R.id.) as SupportMapFragment?
+        //mapFragment!!.getMapAsync(this)
     }
 
     @SuppressLint("MissingPermission")
