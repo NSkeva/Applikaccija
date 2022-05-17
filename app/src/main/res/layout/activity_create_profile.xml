@@ -21,7 +21,7 @@
         >
 
         <EditText
-            android:id="@+id/displayName"
+            android:id="@+id/displayFName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -29,10 +29,30 @@
             android:layout_marginRight="15dp"
             android:autofillHints="name"
             android:ems="10"
-            android:hint="@string/name"
+            android:hint="@string/first_name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColorHint="#757575" />
+        <EditText
+            android:id="@+id/displayLName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:autofillHints="name"
+            android:ems="10"
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <Spinner
+            android:id="@+id/posao_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/btnConfirm"
