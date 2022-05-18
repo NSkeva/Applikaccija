@@ -36,6 +36,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         val displayLName = v.findViewById<TextView>(R.id.lastName)
         val displayJName = v.findViewById<TextView>(R.id.jobName)
         val displayAName = v.findViewById<TextView>(R.id.address)
+        val phoneNumber = v.findViewById<TextView>(R.id.phoneNumber)
         db.collection("users").document(uid.toString())
             .get()
             .addOnSuccessListener {
@@ -43,7 +44,8 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                 displayLName.text = it.get("last").toString()
                 displayJName.text = it.get("job").toString()
                 displayAName.text = it.get("address").toString()
-                //TO DO BATO TU IDE SLIKA JOS
+                phoneNumber.text = it.get("phone").toString()
+
 
             }
             .addOnFailureListener { exception ->

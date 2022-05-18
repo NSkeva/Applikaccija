@@ -35,6 +35,7 @@
     <string name="croatian">Hrvatski</string>
     <string name="english">English</string>
     <string name="chat">Chat</string>
+    <string name="phone_number">Phone Number:</string>
 
     <string-array name="lista_poslova">
         <item>Vodoinstalater</item>

@@ -35,4 +35,5 @@
     <string name="chat">Čavrljanje</string>
     <string name="english">English</string>
     <string name="croatian">Hrvatski</string>
+    <string name="phone_number">Broj Mobitela:</string>
 </resources>
