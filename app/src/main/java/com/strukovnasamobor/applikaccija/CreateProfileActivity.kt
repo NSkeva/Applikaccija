@@ -1,5 +1,6 @@
 package com.strukovnasamobor.applikaccija
 
+import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
@@ -13,8 +14,27 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import android.provider.MediaStore
 
+import android.graphics.Bitmap
+import java.io.IOException
+import com.google.firebase.storage.UploadTask
 
+import android.widget.Toast
+
+import androidx.annotation.NonNull
+
+import com.google.android.gms.tasks.OnFailureListener
+
+import com.google.android.gms.tasks.OnSuccessListener
+
+import android.app.ProgressDialog
+import com.google.firebase.firestore.OnProgressListener
+import com.google.firebase.storage.ktx.storage
+import java.io.File
+import java.util.*
 
 
 class CreateProfileActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -26,15 +46,23 @@ class CreateProfileActivity : AppCompatActivity(), AdapterView.OnItemSelectedLis
     private lateinit var btnConfirm: Button
     val user = FirebaseAuth.getInstance().currentUser
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_profile)
+
+
+
+
+
 
 
         displayFName = findViewById(R.id.displayFName)
         displayLName = findViewById(R.id.displayLName)
         btnConfirm = findViewById(R.id.btnConfirm)
         spinner = findViewById(R.id.posao_list)
+
+
 
         btnConfirm.setOnClickListener {
             updateProfile()
@@ -54,6 +82,11 @@ class CreateProfileActivity : AppCompatActivity(), AdapterView.OnItemSelectedLis
         spinner.onItemSelectedListener = this
 
     }
+
+
+
+
+
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
         // An item was selected. You can retrieve the selected item using
