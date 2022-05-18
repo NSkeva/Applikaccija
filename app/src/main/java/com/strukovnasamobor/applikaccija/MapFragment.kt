@@ -65,8 +65,8 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
     override fun onMapReady(mapObj: GoogleMap) {
         Toast.makeText(context, "Map is readey", Toast.LENGTH_SHORT).show()
         mMap = mapObj
-        mMap!!.uiSettings.isZoomControlsEnabled = true
-        mMap!!.setOnMarkerClickListener (this)
+        mMap.uiSettings.isZoomControlsEnabled = true
+        mMap.setOnMarkerClickListener (this)
         setUpMap()
     }
 
@@ -76,9 +76,7 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
     ): View {
         val v: View = inflater.inflate(R.layout.fragment_map, container, false)
         val mapShi = childFragmentManager.findFragmentById(R.id.google_map) as SupportMapFragment?
-        if (mapShi != null) {
-            mapShi.getMapAsync (this)
-        }
+        mapShi?.getMapAsync (this)
         val bits = v.findViewById(R.id.currentLoc) as Button
         bits.setOnClickListener {
             getLastLocation()

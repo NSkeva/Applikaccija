@@ -59,7 +59,7 @@ class CreateProfileActivity : AppCompatActivity(), AdapterView.OnItemSelectedLis
 
         displayFName = findViewById(R.id.displayFName)
         displayLName = findViewById(R.id.displayLName)
-        btnConfirm = findViewById(R.id.btnConfirm)
+        //btnConfirm = findViewById(R.id.btnConfirm)
         spinner = findViewById(R.id.posao_list)
 
 
