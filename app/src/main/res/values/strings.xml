@@ -7,14 +7,14 @@
     <string name="email">email</string>
     <string name="login">Login</string>
     <string name="don_t_have_an_account_sign_in">Dont Have an account? Sign in</string>
-    <string name="mapa_za_rad">Mapa za rad</string>
+    <string name="mapa_za_rad">Maps for work</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="forgot_your_password_reset_it">Forgot your password? Reset it</string>
     <string name="type_your_email_for_a_password_reset">Type your email for a password reset</string>
     <string name="reset_password">Reset Password</string>
-    <string name="mapa">Mapa</string>
-    <string name="opcije">Opcije</string>
-    <string name="posao">Posao</string>
+    <string name="mapa">Map</string>
+    <string name="opcije">Options</string>
+    <string name="posao">Job</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="map">Map</string>
@@ -27,6 +27,14 @@
     <string name="last_name">Last Name</string>
     <string name="upload">Upload</string>
     <string name="choose">Choose</string>
+    <string name="profile">Profile:</string>
+    <string name="ime">First Name:</string>
+    <string name="prezime">Last Name:</string>
+    <string name="struka">Job:</string>
+    <string name="adresa">Adress:</string>
+    <string name="croatian">Hrvatski</string>
+    <string name="english">English</string>
+    <string name="chat">Chat</string>
 
     <string-array name="lista_poslova">
         <item>Vodoinstalater</item>

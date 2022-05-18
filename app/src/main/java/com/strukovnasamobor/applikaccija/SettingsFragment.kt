@@ -35,12 +35,14 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         val displayFName = v.findViewById<TextView>(R.id.firstName)
         val displayLName = v.findViewById<TextView>(R.id.lastName)
         val displayJName = v.findViewById<TextView>(R.id.jobName)
+        val displayAName = v.findViewById<TextView>(R.id.address)
         db.collection("users").document(uid.toString())
             .get()
             .addOnSuccessListener {
                 displayFName.text = it.get("first").toString()
                 displayLName.text = it.get("last").toString()
                 displayJName.text = it.get("job").toString()
+                displayAName.text = it.get("address").toString()
                 //TO DO BATO TU IDE SLIKA JOS
 
             }
