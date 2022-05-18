@@ -40,6 +40,7 @@ import java.util.*
 class CreateProfileActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var displayFName: EditText
     lateinit var displayLName: EditText
+    lateinit var addressN: EditText
     var ime_posla = ""
     lateinit var spinner: Spinner
     var db = FirebaseFirestore.getInstance()
@@ -58,6 +59,7 @@ class CreateProfileActivity : AppCompatActivity(), AdapterView.OnItemSelectedLis
 
         displayFName = findViewById(R.id.displayFName)
         displayLName = findViewById(R.id.displayLName)
+        addressN = findViewById(R.id.addressN)
         //btnConfirm = findViewById(R.id.btnConfirm)
         spinner = findViewById(R.id.posao_list)
 
@@ -105,6 +107,7 @@ class CreateProfileActivity : AppCompatActivity(), AdapterView.OnItemSelectedLis
 
             "first" to displayFName.text.toString(),
             "last" to displayLName.text.toString(),
+            "address" to addressN.text.toString(),
             "job" to ime_posla
 
         )
