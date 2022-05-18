@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Applikaccija</string>
+    <string name="password">Lozinka(Najmanje 7 znakova)</string>
+    <string name="confirm_password">Potvrdi Lozinku</string>
+    <string name="signed">REGISTRACIJA</string>
+    <string name="already_have_an_account_login">Već imate račun? Prijavite se</string>
+    <string name="email">email</string>
+    <string name="login">Prijava</string>
+    <string name="don_t_have_an_account_sign_in">Nemate račun? Registrirajte se</string>
+    <string name="mapa_za_rad">Mapa za rad</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="forgot_your_password_reset_it">Zaboravili ste lozinku? Resetirajte</string>
+    <string name="type_your_email_for_a_password_reset">Upišite svoj email za resetiranje šifre</string>
+    <string name="reset_password">Resetirajte Lozinku</string>
+    <string name="mapa">Mapa</string>
+    <string name="opcije">Opcije</string>
+    <string name="posao">Posao</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="map">Mapa</string>
+    <string name="settings">postavke</string>
+    <string name="jobs">Poslovi</string>
+    <string name="title_activity_maps2">MapsActivity2</string>
+    <string name="name">Ime</string>
+    <string name="confirm">Potvrdi</string>
+    <string name="first_name">Ime</string>
+    <string name="last_name">Prezime</string>
+    <string name="upload">Upload</string>
+    <string name="choose">Odaberi</string>
+    <string name="profile">Profil:</string>
+    <string name="ime">Ime:</string>
+    <string name="prezime">Prezime:</string>
+    <string name="struka">Posao:</string>
+    <string name="adresa">Adresa:</string>
+    <string name="chat">Čavrljanje</string>
+    <string name="english">English</string>
+    <string name="croatian">Hrvatski</string>
+</resources>

@@ -18,20 +18,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:layout_margin="15dp"
+            android:text="@string/profile"
+            />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:layout_margin="10dp"
+            android:text="@string/ime"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="32sp"
             android:id="@+id/firstName"
+            />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:layout_margin="10dp"
+            android:text="@string/prezime"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="32sp"
             android:id="@+id/lastName"
+            />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:layout_margin="10dp"
+            android:text="@string/struka"
             />
         <TextView
             android:layout_width="match_parent"
@@ -39,6 +67,20 @@
             android:textSize="32sp"
             android:id="@+id/jobName"
 
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:layout_margin="10dp"
+            android:text="@string/adresa"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:id="@+id/adress"
             />
 
 

@@ -57,8 +57,8 @@
             android:layout_marginRight="15dp"
             tools:ignore="SpeakableTextPresentCheck" />
         <Button
-            android:id="@+id/btnChoose"
-            android:text="@string/choose"
+            android:id="@+id/btnConfirm"
+            android:text="@string/confirm"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

@@ -53,8 +53,7 @@ class CreateProfileActivity : AppCompatActivity(), AdapterView.OnItemSelectedLis
 
 
 
-
-
+        btnConfirm = findViewById(R.id.btnConfirm)
 
 
         displayFName = findViewById(R.id.displayFName)
