@@ -21,4 +21,6 @@
     <string name="settings">settings</string>
     <string name="jobs">Jobs</string>
     <string name="title_activity_maps2">MapsActivity2</string>
+    <string name="name">name</string>
+    <string name="confirm">confirm</string>
 </resources>

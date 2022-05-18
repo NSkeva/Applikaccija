@@ -26,15 +26,8 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.Marker
 
 
-class MapsActivity : AppCompatActivity(R.layout.activity_maps), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+class MapsActivity : AppCompatActivity(R.layout.activity_maps) {
     lateinit var binding: ActivityMapsBinding
-    private lateinit var mMap: GoogleMap
-    private lateinit var lastLocation: Location
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-
-    companion object{
-        private  const val LOCATION_REQUEST_CODE = 1
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +43,6 @@ class MapsActivity : AppCompatActivity(R.layout.activity_maps), OnMapReadyCallba
         binding.buttonJobsFragment.setOnClickListener{
             replaceFragment(JobFragment())
         }
-
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
     }
 
     private fun replaceFragment(fragment: Fragment){
@@ -60,42 +51,4 @@ class MapsActivity : AppCompatActivity(R.layout.activity_maps), OnMapReadyCallba
         fragmentTransaction.replace(R.id.fragment_container_view, fragment)
         fragmentTransaction.commit()
     }
-
-    override fun onMapReady(p0: GoogleMap) {
-        mMap = p0
-        mMap.uiSettings.isZoomControlsEnabled = true
-        mMap.setOnMarkerClickListener (this)
-        setUpMap()
-    }
-
-    private fun setUpMap() {
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-        ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_REQUEST_CODE)
-            return
-        }
-        mMap.isMyLocationEnabled = true
-        fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
-            if(location != null){
-                lastLocation = location
-                val currentLatLong = LatLng(location.latitude, location.longitude)
-                placeMarkerOnMap(currentLatLong)
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 12f))
-            }
-        }
-    }
-
-    private fun placeMarkerOnMap(currentLatLong: LatLng) {
-        val markerOptions = MarkerOptions().position(currentLatLong)
-        markerOptions.title("$currentLatLong")
-        mMap.addMarker(markerOptions)
-    }
-
-    override fun onMarkerClick(p0: Marker) = false
 }
