@@ -8,44 +8,46 @@ import android.content.Context.LOCATION_SERVICE
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import android.os.Bundle
-
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import android.location.Location
 import android.location.LocationManager
-import android.os.Debug
+import android.os.Bundle
 import android.os.Looper
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import com.google.android.gms.maps.model.Marker
-import com.google.android.libraries.places.api.Places
 import com.google.android.gms.location.*
-import android.view.View
-
-import android.view.ViewGroup
-
-import android.view.LayoutInflater
-import android.widget.Button
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import java.io.DataOutputStream
-import java.io.FileOutputStream
-import java.io.IOException
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.libraries.places.api.Places
+import java.io.*
+import java.lang.Math.random
+import java.lang.Math.sqrt
 import kotlin.math.pow
-import kotlin.math.sqrt
 
 
 class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private lateinit var mMap: GoogleMap
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private var LocationArray = arrayOfNulls<Marker>(200)
+    private var LocationArray = arrayOfNulls<LatLng>(200)
     private var LocationCount = 0
+    private var laScam: Double = 0.0
+    private var lonScam: Double = 0.0
+
+
+    //val output: FileOutputStream = context!!.openFileOutput("latlngpoints.txt", Context.MODE_PRIVATE)
+    //private val input: FileInputStream = context!!.openFileInput("latlngpoints.txt")
+
 
     var currentLocation: LatLng = LatLng(20.5, 78.9)
     companion object{
@@ -77,12 +79,11 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
         mMap = mapObj
         mMap.uiSettings.isZoomControlsEnabled = true
         mMap.setOnMarkerClickListener (this)
+        val rnd = (0..50).random()
         mMap.setOnMapClickListener (object :GoogleMap.OnMapClickListener{
             override fun onMapClick(markerCoords: LatLng) {
                 val loc = LatLng(markerCoords.latitude, markerCoords.longitude)
                 mMap.addMarker(MarkerOptions().position(loc))
-                /*LocationArray[LocationCount] = mMap.addMarker()
-                LocationCount++*/
             }
         })
         setUpMap()
@@ -114,7 +115,6 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
                     } else {
                         currentLocation = LatLng(location.latitude, location.longitude)
                         mMap.clear()
-                        mMap.addMarker(MarkerOptions().position(currentLocation))
                         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 16F))
                     }
                 }
@@ -215,21 +215,18 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
             if(location != null){
                 lastLocation = location
                 val currentLatLong = LatLng(location.latitude, location.longitude)
-                placeMarkerOnMap(currentLatLong)
+                laScam=location.latitude
+                lonScam=location.longitude
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 12f))
+                val latScam = LatLng(laScam + 0.001, lonScam + 0.009)
+                mMap.addMarker(MarkerOptions().position(latScam).title("F. Maksić").snippet("Bog mater\nMesar"))
             }
         }
     }
 
-    private fun placeMarkerOnMap(currentLatLong: LatLng) {
-        val markerOptions = MarkerOptions().position(currentLatLong)
-        markerOptions.title("$currentLatLong")
-        mMap.addMarker(markerOptions)
-    }
-
     override fun onMarkerClick(p0: Marker) = false
 
-    /*private fun findNearJobs(){
+    private fun findNearJobs(){
         for (i in LocationArray){
             if (i != null) {
                 if(sqrt((currentLocation.latitude - i.latitude).pow(2.0) + (currentLocation.longitude - i.longitude).pow(2.0)) < 400){
@@ -237,6 +234,5 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
                 }
             }
         }
-        var dist = sqrt(currentLocation.latitude - )
-    }*/
+    }
 }

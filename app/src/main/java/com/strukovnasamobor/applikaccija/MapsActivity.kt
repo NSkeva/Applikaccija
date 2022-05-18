@@ -20,14 +20,14 @@ import android.graphics.Insets.add
 import android.location.Location
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.core.app.ActivityCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.Marker
 import java.util.*
+import androidx.fragment.app.*
+import androidx.viewpager.widget.ViewPager
 
 
 class MapsActivity : AppCompatActivity(R.layout.activity_maps) {
@@ -38,6 +38,10 @@ class MapsActivity : AppCompatActivity(R.layout.activity_maps) {
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
+        setFragment(MapFragment())
+
         binding.buttonMapFragment.setOnClickListener{
             replaceFragment(MapFragment())
         }
@@ -47,9 +51,18 @@ class MapsActivity : AppCompatActivity(R.layout.activity_maps) {
         binding.buttonJobsFragment.setOnClickListener{
             replaceFragment(JobFragment())
         }
+
+
     }
 
-
+    fun setFragment(fragment: Fragment?) {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        if (fragment != null) {
+            fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container_view, fragment)
+                .commit()
+        }
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
