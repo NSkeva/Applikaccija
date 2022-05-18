@@ -3,6 +3,7 @@ package com.strukovnasamobor.applikaccija
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Context.LOCATION_SERVICE
 import android.content.Intent
 import android.content.pm.ApplicationInfo
@@ -16,7 +17,9 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import android.location.Location
 import android.location.LocationManager
+import android.os.Debug
 import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
@@ -30,12 +33,19 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.widget.Button
 import com.google.android.gms.maps.SupportMapFragment
+import java.io.DataOutputStream
+import java.io.FileOutputStream
+import java.io.IOException
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 
 class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private lateinit var mMap: GoogleMap
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private var LocationArray = arrayOfNulls<Marker>(200)
+    private var LocationCount = 0
 
     var currentLocation: LatLng = LatLng(20.5, 78.9)
     companion object{
@@ -67,6 +77,14 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
         mMap = mapObj
         mMap.uiSettings.isZoomControlsEnabled = true
         mMap.setOnMarkerClickListener (this)
+        mMap.setOnMapClickListener (object :GoogleMap.OnMapClickListener{
+            override fun onMapClick(markerCoords: LatLng) {
+                val loc = LatLng(markerCoords.latitude, markerCoords.longitude)
+                mMap.addMarker(MarkerOptions().position(loc))
+                /*LocationArray[LocationCount] = mMap.addMarker()
+                LocationCount++*/
+            }
+        })
         setUpMap()
     }
 
@@ -210,4 +228,15 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
     }
 
     override fun onMarkerClick(p0: Marker) = false
+
+    /*private fun findNearJobs(){
+        for (i in LocationArray){
+            if (i != null) {
+                if(sqrt((currentLocation.latitude - i.latitude).pow(2.0) + (currentLocation.longitude - i.longitude).pow(2.0)) < 400){
+
+                }
+            }
+        }
+        var dist = sqrt(currentLocation.latitude - )
+    }*/
 }
