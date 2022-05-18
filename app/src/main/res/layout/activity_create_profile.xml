@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,7 +21,7 @@
         >
 
         <EditText
-            android:id="@+id/displayName"
+            android:id="@+id/displayFName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -29,19 +29,43 @@
             android:layout_marginRight="15dp"
             android:autofillHints="name"
             android:ems="10"
-            android:hint="@string/name"
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+        <EditText
+            android:id="@+id/displayLName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:autofillHints="name"
+            android:ems="10"
+            android:hint="@string/last_name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColorHint="#757575" />
 
-        <Button
-            android:id="@+id/btnConfirm"
+        <Spinner
+            android:id="@+id/posao_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:text="@string/confirm" />
+            android:minHeight="48dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+        <Button
+            android:id="@+id/btnChoose"
+            android:text="@string/choose"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

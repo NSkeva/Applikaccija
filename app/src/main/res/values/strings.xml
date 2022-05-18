@@ -23,4 +23,16 @@
     <string name="title_activity_maps2">MapsActivity2</string>
     <string name="name">name</string>
     <string name="confirm">confirm</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="upload">Upload</string>
+    <string name="choose">Choose</string>
+
+    <string-array name="lista_poslova">
+        <item>Vodoinstalater</item>
+        <item>Tehnicar za racunalstvo</item>
+        <item>Pekar</item>
+        <item>Elektricar</item>
+        <item>Zidar</item>
+    </string-array>
 </resources>
