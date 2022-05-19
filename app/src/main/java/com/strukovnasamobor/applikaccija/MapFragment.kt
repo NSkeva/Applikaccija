@@ -80,12 +80,12 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
         mMap.uiSettings.isZoomControlsEnabled = true
         mMap.setOnMarkerClickListener (this)
         val rnd = (0..50).random()
-        mMap.setOnMapClickListener (object :GoogleMap.OnMapClickListener{
+        /*mMap.setOnMapClickListener (object :GoogleMap.OnMapClickListener{
             override fun onMapClick(markerCoords: LatLng) {
                 val loc = LatLng(markerCoords.latitude, markerCoords.longitude)
                 mMap.addMarker(MarkerOptions().position(loc))
             }
-        })
+        })*/
         setUpMap()
     }
 
@@ -114,7 +114,6 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
                         requestNewLocationData()
                     } else {
                         currentLocation = LatLng(location.latitude, location.longitude)
-                        mMap.clear()
                         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 16F))
                     }
                 }
@@ -219,7 +218,11 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
                 lonScam=location.longitude
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 12f))
                 val latScam = LatLng(laScam + 0.001, lonScam + 0.009)
+                val latScam2 = LatLng(laScam - 0.001, lonScam + 0.009)
+                val latScam3 = LatLng(laScam + 0.001, lonScam - 0.009)
                 mMap.addMarker(MarkerOptions().position(latScam).title("F. Maksić").snippet("Bog mater\nMesar"))
+                mMap.addMarker(MarkerOptions().position(latScam2).title("Jeliq").snippet("Radim WC"))
+                mMap.addMarker(MarkerOptions().position(latScam3).title("zLaTko").snippet("Talijan"))
             }
         }
     }
@@ -230,7 +233,7 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback, GoogleM
         for (i in LocationArray){
             if (i != null) {
                 if(sqrt((currentLocation.latitude - i.latitude).pow(2.0) + (currentLocation.longitude - i.longitude).pow(2.0)) < 400){
-
+                    //marker.isActive(hidden)
                 }
             }
         }
